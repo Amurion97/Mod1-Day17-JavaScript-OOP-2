@@ -44,12 +44,7 @@ function reset() {
                 + `width: ${DEFAULT_CELL_SIZE}px; height: ${DEFAULT_CELL_SIZE}px; `
                 // + `line-height: ${DEFAULT_CELL_SIZE}px; `
                 // + `border: 1px solid black; `
-                + `box-shadow: 
-    1px 0 0 0 #888, 
-    0 1px 0 0 #888, 
-    1px 1px 0 0 #888,   /* Just to fix the corner */
-    1px 0 0 0 #888 inset, 
-    0 1px 0 0 #888 inset;"`
+                + `box-shadow: 1px 0 0 0 #888, 0 1px 0 0 #888, 1px 1px 0 0 #888, 1px 0 0 0 #888 inset, 0 1px 0 0 #888 inset;"`
                 + `>`
                 + `</div>`;
             arr[i][j] = 0;
@@ -120,13 +115,13 @@ function check(i, j) {
     //right-middle-left
     count = 0;
     for (let k = 1 - winRule; k < winRule - 1; k++) {
-        console.log("k: ", k)
+        // console.log("k: ", k)
         if ((j + k >= 0) && (j + k < max) && (j + k + 1 < max)) {
-            console.log(arr[i][j + k], ":", arr[i][j + k + 1])
+            // console.log(arr[i][j + k], ":", arr[i][j + k + 1])
             if ((arr[i][j + k] === arr[i][j + k + 1]) && (arr[i][j + k] > 0)) {
                 count++;
-                console.log()
-                console.log("count = ", count)
+                // console.log()
+                // console.log("count = ", count)
             } else {
                 count = 0;
             }
@@ -135,23 +130,5 @@ function check(i, j) {
             }
         }
     }
-    // if ((i - 2 > 0) && (j - 2 > 0)) {
-    //     if ((arr[i - 2][j - 2] === key) && (arr[i - 1][j - 1] === key)) {
-    //         alert(true);
-    //         return true;
-    //     }
-    // }
-    // if ((i + 2 < arr.length) && (j + 2 < arr.length)) {
-    //     if ((arr[i + 2][j + 2] === key) && (arr[i + 1][j + 1] === key)) {
-    //         alert(true);
-    //         return true;
-    //     }
-    // }
-    // if ((i - 1 > 0) && (j - 1 > 0) && (i + 1 < arr.length) && (j + 1 < arr.length)) {
-    //     if ((arr[i - 1][j - 1] === key) && (arr[i + 1][j + 1] === key)) {
-    //         alert(true);
-    //         return true;
-    //     }
-    // }
     return false;
 }
